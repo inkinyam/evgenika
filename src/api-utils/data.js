@@ -99,8 +99,72 @@ const tracksData = [
     link: 'yandex.ru',
     img: 'https://sun9-57.userapi.com/impg/lYLiCE3kjPqz0fmWjfEP984ZIqU-AeTDMYT8qg/rGusDFQtxrQ.jpg?size=300x300&quality=96&sign=be897340d5345c828e2c783c4ec7dffb&type=album'
   },
+]
 
+const newsData = [
+  {
+    id:1, 
+    img: 'https://sun9-57.userapi.com/impg/lYLiCE3kjPqz0fmWjfEP984ZIqU-AeTDMYT8qg/rGusDFQtxrQ.jpg?size=300x300&quality=96&sign=be897340d5345c828e2c783c4ec7dffb&type=album',
+    date: '12.12.12',
+    title: 'Назвнаие',
+    descpription: 'Назвнаие Назвнаие Назвнаие Назвнаие Назвнаие Назвнаие'
+  },
+  {
+    id:2, 
+    date: '12.12.12',
+    title: 'Назвнаие',
+    descpription: 'Назвнаие Назвнаие Назвнаие Назвнаие Назвнаие Назвнаие'
+  },
+  {
+    id:3, 
+    img: 'https://sun9-57.userapi.com/impg/lYLiCE3kjPqz0fmWjfEP984ZIqU-AeTDMYT8qg/rGusDFQtxrQ.jpg?size=300x300&quality=96&sign=be897340d5345c828e2c783c4ec7dffb&type=album',
+    date: '12.12.12',
+    title: 'Назвнаие',
+    descpription: 'Назвнаие Назвнаие Назвнаие Назвнаие Назвнаие Назвнаие'
+  },
+  {
+    id:4, 
+    img: 'https://sun9-57.userapi.com/impg/lYLiCE3kjPqz0fmWjfEP984ZIqU-AeTDMYT8qg/rGusDFQtxrQ.jpg?size=300x300&quality=96&sign=be897340d5345c828e2c783c4ec7dffb&type=album',
+    date: '12.12.12',
+    title: 'Назвнаие',
+    descpription: 'Назвнаие Назвнаие Назвнаие Назвнаие Назвнаие Назвнаие'
+  },
+  {
+    id:5, 
+    img: 'https://sun9-57.userapi.com/impg/lYLiCE3kjPqz0fmWjfEP984ZIqU-AeTDMYT8qg/rGusDFQtxrQ.jpg?size=300x300&quality=96&sign=be897340d5345c828e2c783c4ec7dffb&type=album',
+    date: '12.12.12',
+    title: 'Назвнаие',
+    descpription: 'Назвнаие Назвнаие Назвнаие Назвнаие Назвнаие Назвнаие'
+  },
+  {
+    id:6, 
+    img: 'https://sun9-57.userapi.com/impg/lYLiCE3kjPqz0fmWjfEP984ZIqU-AeTDMYT8qg/rGusDFQtxrQ.jpg?size=300x300&quality=96&sign=be897340d5345c828e2c783c4ec7dffb&type=album',
+    date: '12.12.12',
+    title: 'Назвнаие',
+    descpription: 'Назвнаие Назвнаие Назвнаие Назвнаие Назвнаие Назвнаие'
+  },
+]
+
+const videoData = [
+  {
+    id: 1,
+    title: 'о боже какой мужчина',
+    link: '3OxG_5N0LqE',
+    img: 'http://evgenika.su/static/uploads/content/video/image/sample10.jpg'
+  },
+  {
+    id: 2,
+    title: 'Развод',
+    link: '3OxG_5N0LqE',
+    img: 'http://evgenika.su/static/uploads/content/video/image/sample10.jpg'
+  },
+  {
+    id: 3,
+    title: 'Оттепель',
+    link: 'GkMlZjAMgLI',
+    img: 'http://evgenika.su/static/uploads/content/video/image/nature.jpg'
+  }
 ]
 
 
-export {concertsData, tracksData}
+export {concertsData, tracksData, newsData, videoData}

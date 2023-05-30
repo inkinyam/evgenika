@@ -1,6 +1,5 @@
 import './Tracks.scss';
 import SectionTitle from '../SectionTitle/SectionTitle';
-
 import { tracksData } from '../../api-utils/data';
 
 

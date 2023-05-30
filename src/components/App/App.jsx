@@ -4,6 +4,8 @@ import Navigations from '../Navigations/Navigations';
 import About from '../About/About';
 import Concerts from '../Concerts/Concerts';
 import Tracks from '../Tracks/Tracks';
+import News from '../News/News';
+import Videos from '../Videos/Videos';
 
 function App() {
   return(
@@ -14,6 +16,8 @@ function App() {
       <About/>
       <Concerts/>
       <Tracks/>
+      <News/>
+      <Videos/>
 
     </main>
 
