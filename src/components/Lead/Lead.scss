@@ -1,0 +1,72 @@
+@import '../../utils/mixins';
+
+.lead{
+  @include standart-width;
+  background-image: url('../../assets/photo/main-photo.png');
+  background-position: right 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.lead__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 488px;
+  margin: 40px 0 0 133px;
+}
+
+.lead__logo {
+  max-width: 100%;
+  margin-bottom: 64px;
+}
+
+.lead__button {
+  @include button;
+  margin-bottom: 64px;
+}
+
+.lead__new {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  position: relative;
+  margin-bottom: 80px;
+  
+  .lead__small-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .lead__clip-link {
+    @include transition(background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #F00000;
+    width: 97px;
+    height: 62px;
+    border-radius: 15px;
+
+    bottom: -31px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      clip-path: polygon(0% 0%, 0% 100%, 100% 50%) ;
+    }
+
+    &:hover {
+      background-color: #b30202;
+    }
+  }
+}

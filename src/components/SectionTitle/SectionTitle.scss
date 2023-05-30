@@ -1,0 +1,28 @@
+.section-title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 59px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  margin: 0;
+  width: fit-content;
+
+  position: absolute;
+  left: -90px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+
+  &::before {
+    content:attr(data-text);
+    -webkit-text-stroke:1px #FF0726;
+    -webkit-text-fill-color:transparent;
+    position: absolute;
+    left: 46px;
+    width: 100%;
+    top: 35px;
+  }
+
+}

@@ -1,0 +1,39 @@
+@import '../../utils/mixins';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  padding: 40px 0;
+}
+
+.header__social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 14px;
+}
+
+.header__link {
+  display: flex;
+  place-items: center;
+  font-size: 0;
+  line-height: 0;
+  width: 30px;
+  height: 30px;
+
+  img {
+    @include transition(opacity);
+    width: 100%;
+    height: auto;
+  }
+
+  &:hover {
+    img {
+      opacity: 0.7;
+    }
+  }
+}

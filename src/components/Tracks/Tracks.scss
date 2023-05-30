@@ -1,0 +1,71 @@
+@import '../../utils/mixins';
+
+.tracks {
+  box-sizing: border-box;
+  padding: 100px 214px;
+
+  .tracks__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tracks__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    position: relative;
+
+
+    border-top: 1px solid rgba(209, 213, 219, 0.15);
+    border-bottom: 1px solid rgba(209, 213, 219, 0.15);
+    backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+
+    .tracks__img {
+      width: 100%;
+      height: auto;
+      min-height: 100%;
+      object-position: center;
+      object-fit: cover;
+    }
+
+    .tracks__link {
+      @include transition (background-color);
+      z-index: 2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: block;
+
+      &:hover {
+        background-color: rgba(255, 7, 38, 0.8);
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        clip-path: polygon(0% 0%, 0% 100%, 100% 50%) ;
+      }
+    }
+  }
+}
