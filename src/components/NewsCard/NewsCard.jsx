@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 
 const NewsCard = ({card}) => {
   return (
@@ -12,6 +14,10 @@ const NewsCard = ({card}) => {
       </div>
 
   )
+}
+
+NewsCard.propTypes = {
+  card: PropTypes.object.isRequired
 }
 
 export default NewsCard;

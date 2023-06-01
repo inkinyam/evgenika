@@ -1,4 +1,5 @@
 import './SectionTitle.scss';
+import propTypes from 'prop-types';
 
 
 const SectionTitle = ({text}) => {
@@ -10,5 +11,8 @@ const SectionTitle = ({text}) => {
  
 }
 
+SectionTitle.propTypes = {
+  text: propTypes.string.isRequired
+}
 
 export default SectionTitle;

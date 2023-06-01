@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 const ConcertCard = ({data}) => {
   return (
@@ -22,5 +23,11 @@ const ConcertCard = ({data}) => {
     </li>
   )
 }
+
+ConcertCard.propTypes = {
+  data: PropTypes.object.isRequired
+}
+
+
 
 export default ConcertCard;
