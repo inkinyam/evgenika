@@ -44,6 +44,8 @@ const opts = {
               })
             }
       </Swiper>
+
+      <a href="youtube.ru" className="videos__button">Еще больше клипов</a>
     </section>
   )
 }
