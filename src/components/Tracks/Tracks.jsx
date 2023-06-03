@@ -1,15 +1,16 @@
 import './Tracks.scss';
 import SectionTitle from '../SectionTitle/SectionTitle';
-import { tracksData } from '../../api-utils/data';
+import PropTypes from 'prop-types';
+import TracksCard from '../TracksCard/TracksCard';
 
 
-const Tracks = () => {
+const Tracks = ({data}) => {
   return (
     <section className='section tracks'>
       <SectionTitle text = 'Треки'/>
       <ul className="tracks__list">
         {
-          tracksData.map(item => {
+          data.map(item => {
             return (
               <TracksCard data = {item} 
                           key  = {item.id}/>
@@ -20,15 +21,11 @@ const Tracks = () => {
     </section>
   )
 }
-
+Tracks.propTypes = {
+  data: PropTypes.array.isRequired
+}
 export default Tracks;
 
 
-const TracksCard = ({data}) => {
-  return (
-    <li className="tracks__item">
-      <img src={data.img} alt={data.name} className="tracks__img"/>
-        <a href={data.link} className='tracks__link'></a>
-    </li>
-  )
-}
+
+

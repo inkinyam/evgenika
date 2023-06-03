@@ -1,10 +1,10 @@
 import './News.scss';
 import NewsCard from '../NewsCard/NewsCard';
+import PropTypes from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
-import { newsData } from '../../api-utils/data';
 
-const News = () => {
+const News = ({data}) => {
   return (
     <section className="section news">
       <Swiper slidesPerView  = {3}
@@ -15,7 +15,7 @@ const News = () => {
               modules        = {[ Navigation ]}
               className      = "news__slider" >
 
-            { newsData.map(card => {
+            { data.map(card => {
                 return (
                   <SwiperSlide  key  = {card.id}>
                     <NewsCard   key  = {card.id}
@@ -27,6 +27,10 @@ const News = () => {
       </Swiper>
     </section>
   )
+}
+
+News.propTypes = {
+  data: PropTypes.array.isRequired
 }
 
 export default News;

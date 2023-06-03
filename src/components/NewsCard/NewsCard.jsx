@@ -6,11 +6,11 @@ const NewsCard = ({card}) => {
 
       <div className="news__card">
         <div className="news__img">
-          {card.img?<img src={card.img} alt={card.title} />:""}
+          {card.image?<img src={card.image} alt={card.name} />:""}
         </div>
         <small className="news__date">{card.date}</small>
-        <h4 className="news__title">{card.title}</h4>
-        <p className="news__description">{card.descpription}</p>
+        <h4 className="news__title">{card.name}</h4>
+        <p className="news__description">{card.short_text}</p>
       </div>
 
   )

@@ -3,9 +3,9 @@ import SectionTitle from '../SectionTitle/SectionTitle';
 import GuidesCard from '../GuidesCard/GuidesCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
-import { guidesData } from '../../api-utils/data';
+import PropTypes from 'prop-types';
 
-const Guides = () => {
+const Guides = ({data}) => {
   return(
     <section className='section guides'>
     <SectionTitle text='Гайды'/>
@@ -18,7 +18,7 @@ const Guides = () => {
               modules      = {[ Pagination ]}
               className    = "guides__slider" >
 
-            { guidesData.map(card => {
+            { data.map(card => {
                 return (
                   <SwiperSlide  key  = {card.id}>
                     <GuidesCard key  = {card.id}
@@ -33,5 +33,8 @@ const Guides = () => {
   )
 }
 
+Guides.propTypes = {
+  data: PropTypes.array.isRequired
+}
 
 export default Guides;

@@ -2,11 +2,9 @@ import './Videos.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper';
 import YouTube from 'react-youtube';
+import PropTypes from 'prop-types';
 
-import { videoData } from '../../api-utils/data';
-
-
-const Videos = () => {
+const Videos = ({data}) => {
 const opts = {
   height: '850',
   width: '1271',
@@ -31,13 +29,13 @@ const opts = {
               modules        = {[ Pagination, Autoplay]}
               className      = "videos__slider" >
 
-            { videoData.map(card => {
+            { data.map(card => {
                 return (
                   <SwiperSlide  key  = {card.id}>
                     <YouTube    key  = {card.id}
                                 className='videos__video'
                                 opts = {opts}
-                                videoId={card.link}/>
+                                videoId={card.link.substring(17)}/>
                     <h4 className='videos__title'>{card.title}</h4>
                   </SwiperSlide> 
                 )
@@ -48,6 +46,10 @@ const opts = {
       <a href="youtube.ru" className="videos__button">Еще больше клипов</a>
     </section>
   )
+}
+
+Videos.propTypes = {
+  data: PropTypes.array.isRequired
 }
 
 export default Videos;

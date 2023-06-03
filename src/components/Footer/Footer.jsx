@@ -3,8 +3,9 @@ import iconInstagramm from '../../assets/icons/Icons-instagramm.svg';
 import iconTelegramm from '../../assets/icons/Icons-Telegram.svg';
 import iconVK from '../../assets/icons/Icons-VK.svg';
 import iconYoutube from '../../assets/icons/Icons-youtube.svg';
+import PropTypes from 'prop-types';
 
-const Footer = () => {
+const Footer = ({data}) => {
   return (
     <footer className='footer'>
       <section className="footer__top">
@@ -25,16 +26,16 @@ const Footer = () => {
         <h4 className="footer__title">Социальные сети певицы</h4>
 
         <div className="footer__social">
-        <a href="#" className="footer__link">
+        <a href={data.instagram} className="footer__link">
             <img src={iconInstagramm} alt="icon" />
           </a>
-          <a href="#" className="footer__link">
+          <a href={data.youtube} className="footer__link">
             <img src={iconYoutube} alt="icon" />
           </a>
-          <a href="#" className="footer__link">
+          <a href={data.telegram} className="footer__link">
             <img src={iconTelegramm} alt="icon" />
           </a>
-          <a href="#" className="footer__link">
+          <a href={data.vk} className="footer__link">
             <img src={iconVK} alt="icon" />
           </a>
         </div>
@@ -43,5 +44,7 @@ const Footer = () => {
     </footer>
   )
 }
-
+Footer.propTypes = {
+  data: PropTypes.array.isRequired
+}
 export default Footer;
