@@ -1,20 +1,16 @@
 import './Videos.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper';
-import YouTube from 'react-youtube';
+import SectionTitle from '../SectionTitle/SectionTitle';
 import PropTypes from 'prop-types';
 
-const Videos = ({data}) => {
-const opts = {
-  height: '850',
-  width: '1271',
-  playerVars: {
-    autoplay: 0,
-  },
-}
+import ReactPlayer from 'react-player'
 
+const Videos = ({data, social}) => {
   return (
-    <section className='section videos'>
+    <section className='section videos' id='videos'>
+      <SectionTitle text="Клипы"/>
+      
       <Swiper slidesPerView  = {1}
               spaceBetween   = {0}
               threshold      = {1}
@@ -23,7 +19,7 @@ const opts = {
               pagination     = {true}   
               autoplay       = {true}
               delay          = {{
-                delay: 500,
+                delay: 1500,
                 disableOnInteraction: false,
               }}      
               modules        = {[ Pagination, Autoplay]}
@@ -32,24 +28,40 @@ const opts = {
             { data.map(card => {
                 return (
                   <SwiperSlide  key  = {card.id}>
-                    <YouTube    key  = {card.id}
-                                className='videos__video'
-                                opts = {opts}
-                                videoId={card.link.substring(17)}/>
-                    <h4 className='videos__title'>{card.title}</h4>
+                    <ReactPlayer  url      = {card.link}
+                                  playing  = {false}
+                                  controls 
+                                  light    = {<img src={card.image} alt={card.name} />}
+
+                                  playIcon = {<button className='videos__video-button'></button>}
+                                  config   = {{
+                                    youtube: {
+                                      playerVars: {
+                                        autoplay: 0,
+                                        showinfo: 0,
+                                        modestbranding: 1,
+                                        rel: 0,
+                                        iv_load_policy: 3,
+                                        disablekb: 1,
+                                        controls:2
+                                      },
+                                    }
+                                  }} />
+                    <h4 className='videos__title'>{card.name}</h4>
                   </SwiperSlide> 
                 )
               })
             }
       </Swiper>
 
-      <a href="youtube.ru" className="videos__button">Еще больше клипов</a>
+      <a href={social.youtube} className="videos__button">Еще больше клипов</a>
     </section>
   )
 }
 
 Videos.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
+  social: PropTypes.object.isRequired
 }
 
 export default Videos;

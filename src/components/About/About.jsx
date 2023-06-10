@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 const About = ({data}) => {
   return (
     <>
-      <section className="section about">
+      <section className="section about" id='about'>
         <SectionTitle text='О певице'/>
 
         <div className="about__info">
           <h3 className="about__title">{data.title}</h3>
 
-          <ul className="about__text">{data.dsecription}</ul>
+          <p className="about__text">{data.dsecription}</p>
         </div>
       </section>
     </>
@@ -19,7 +19,7 @@ const About = ({data}) => {
 }
    
 
-About.propTypes = {
-  data: PropTypes.array.isRequired
-}
+ About.propTypes = {
+  data: PropTypes.object.isRequired
+} 
 export default About;

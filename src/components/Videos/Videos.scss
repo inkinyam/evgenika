@@ -1,6 +1,18 @@
 @import '../../utils/mixins';
 
 .videos {
+  .section-title {
+    display: none;
+  }
+
+  @media screen and (max-width: 900px) {
+    
+    .section-title {
+      display: block;
+      margin: 0 auto 40px;
+    }
+  }
+
   
   .videos__slider {
     overflow-y: visible;
@@ -16,10 +28,35 @@
     }
   }
 
-  .videos__video {
+  .swiper-slide{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+
+    div:first-of-type {
+      width: 100% !important;
+      max-width: 100%;
+      aspect-ratio: 16/9;
+      height: auto !important;
+    }
+
+    .react-player__preview {
+      overflow: hidden;
+      position: relative;
+      background-image: url(../../assets/photo/video-cover.png) !important;
+
+      img {
+        width: 100%;
+        min-width: 102%;
+        height: auto;
+        min-height: 100%;
+        object-fit: cover;
+        object-position: center;
+        
+      }
+    } 
   }
 
   .videos__title {
@@ -32,6 +69,12 @@
     width: 100%;
     margin: 0;
     padding: 30px 0 60px;
+
+    @media screen and (max-width: 900px) {
+      font-size: 24px;
+      line-height: 28px;
+      padding: 15px 0 40px;
+    }
   }
 
   .videos__button {
@@ -39,5 +82,45 @@
     padding: 20px;
     text-decoration: none;
     margin: 20px auto 50px;
+  }
+
+  .videos__video-button {
+    @include transition(background-color);
+    display: block;
+    width: 66px;
+    height: 66px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    
+    border-top: 1px solid rgba(209, 213, 219, 0.15);
+    border-bottom: 1px solid rgba(209, 213, 219, 0.15);
+    backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.1);
+    
+    position: relative;
+
+    &:hover {
+      background-color: rgba(255, 7, 38, 0.8);
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      background-color: #000000;
+      clip-path: polygon(0% 0%, 0% 100%, 100% 50%) ;
+    }
   }
 }

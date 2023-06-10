@@ -18,8 +18,11 @@ function App() {
   const [trackCards, setTraksCards] = React.useState([]);
   const [videoCards, setVideosCards] = React.useState([]);
   const [guidesCards, setGuidesCards] = React.useState([]);
-  const [aboutCards, setAboutCards] = React.useState([]);
-  const [contactsCards, setContactsCards] = React.useState([]);
+  const [aboutCards, setAboutCards] = React.useState({});
+  const [promoCards, setPromoCards] = React.useState({});
+  const [socialCards, setSocialCards] = React.useState({});
+  const [concertContactCards, setConcertContactCards] = React.useState({});
+  const [prContactCards, setPRtContactCards] = React.useState({});
 
   React.useEffect(() => { 
     Promise.all([  
@@ -45,25 +48,31 @@ function App() {
               setTraksCards(tracksData); 
               setVideosCards(videosData); 
               setGuidesCards(guidesData); 
-              setAboutCards(aboutData);
-              setContactsCards(contactsData);
+              setAboutCards(aboutData.about);
+              setPromoCards(aboutData.promo);
+              setSocialCards(contactsData.social);
+              setConcertContactCards(contactsData['contact-block-1']);
+              setPRtContactCards(contactsData['contact-block-2']);
             })
            .catch((err) => console.log(err))       
     }, [])
 
   return(
     <>  
-      <Lead/>
+      <Lead data = {promoCards}/>
       <main>
         <Navigations/>
-        <About    data = {aboutCards}/>
-        <Concerts data = {concertCards}/>
-        <Tracks   data = {trackCards}/>
-        <News     data = {publicationCards}/>
-        <Videos   data = {videoCards}/>
-        <Guides   data = {guidesCards}/>
+        <About    data   = {aboutCards}/>
+        <Concerts data   = {concertCards}/>
+        <Tracks   data   = {trackCards}/>
+        <News     data   = {publicationCards}/>
+        <Videos   data   = {videoCards} 
+                  social = {socialCards}/>
+        <Guides   data   = {guidesCards}/>
       </main>
-      <Footer data = {contactsCards}/>
+      <Footer concertContact = {concertContactCards}
+              prContact      = {prContactCards}
+              social         = {socialCards}/>
     </>
   )
 }

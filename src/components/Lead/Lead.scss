@@ -6,6 +6,11 @@
   background-position: right 50px;
   background-repeat: no-repeat;
   background-size: contain;
+  min-height: 90vh;
+
+  @media screen and (max-width: 900px) {
+    min-height: unset;
+  }
 }
 
 .lead__info {
@@ -14,16 +19,27 @@
   align-items: center;
   max-width: 488px;
   margin: 40px 0 0 133px;
+
+  @media screen and (max-width: 900px) {
+    margin: 150px auto 0;
+  }
 }
 
 .lead__logo {
   max-width: 100%;
   margin-bottom: 64px;
+  @media screen and (max-width: 900px) {
+    margin-bottom: 25px;
+  }
 }
 
 .lead__button {
   @include button;
   margin-bottom: 64px;
+
+  @media screen and (max-width: 900px) {
+    margin-bottom: 25px;
+  }
 }
 
 .lead__new {
@@ -32,12 +48,21 @@
   row-gap: 4px;
   position: relative;
   margin-bottom: 80px;
+
+  @media screen and (max-width: 900px) {
+    margin: 0 auto 60px;
+  }
   
   .lead__small-text {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
+
+    @media screen and (max-width: 900px) {
+      font-size: 12px;
+      line-height: 14px;
+    }
   }
 
   .lead__clip-link {
@@ -56,6 +81,12 @@
     transform: translateX(-50%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
+    @media screen and (max-width: 900px) {
+      width: 70px;
+      height: 40px;
+      bottom: -20px;
+    }
+
     &::before {
       content: '';
       display: block;
@@ -67,6 +98,34 @@
 
     &:hover {
       background-color: #b30202;
+    }
+  }
+
+  .lead__clip-cover {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    min-height: 250px;
+    object-position: center;
+
+    @media screen and (max-width: 900px) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  .lead__emptybox {
+    border-top: 1px solid rgba(209, 213, 219, 0.15);
+    border-bottom: 1px solid rgba(209, 213, 219, 0.15);
+    backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+
+    @media screen and (max-width: 900px) {
+      width: 200px;
+      height: 200px;
     }
   }
 }

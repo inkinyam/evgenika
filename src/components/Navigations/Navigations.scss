@@ -22,8 +22,19 @@
     justify-content: center;
     align-items: center;
     column-gap: 69px;
-
+    margin: 0;
+    padding: 0;
     list-style: none;
+    transition: column-gap 0.3s ease;
+
+    @media screen and (max-width: 1200px) {
+      column-gap: 30px;
+    }
+
+    @media screen and (max-width: 900px) {
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
     .navigations__link {
       font-family: 'Montserrat';
@@ -34,6 +45,11 @@
       text-transform: uppercase;
       color: white;
       text-decoration: none;
+
+      @media screen and (max-width: 900px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
 
       @include transition(color);
       &:hover {

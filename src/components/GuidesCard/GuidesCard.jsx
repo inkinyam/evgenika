@@ -12,7 +12,7 @@ const GuidesCard = ({card}) => {
       </div>
       <div className="guides__info">
         <h3 className='guides__title'>{card.name}</h3>
-        <div className="guides__text">{card.subtitle}</div>
+        <div className="guides__text">{card.description}</div>
         <a href={card.link} className="guides__button">{card.link_label}</a>
       </div>
     </div>

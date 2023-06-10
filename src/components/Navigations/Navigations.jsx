@@ -5,25 +5,25 @@ const Navigations = () => {
   <nav className='navigations'>
     <ul className="navigations__links">
       <li className="navigations__item">
-        <a href="#" className="navigations__link">О певице</a>      
+        <a href="#about" className="navigations__link">О певице</a>      
       </li>
       <li className="navigations__item">
-        <a href="#" className="navigations__link">Концерты</a>      
+        <a href="#concerts" className="navigations__link">Концерты</a>      
       </li>
       <li className="navigations__item">
-        <a href="#" className="navigations__link">Треки</a>      
+        <a href="#tracks" className="navigations__link">Треки</a>      
       </li>
       <li className="navigations__item">
-        <a href="#" className="navigations__link">Новости</a>      
+        <a href="#news" className="navigations__link">Новости</a>      
       </li>
       <li className="navigations__item">
-        <a href="#" className="navigations__link">Клипы</a>      
+        <a href="#videos" className="navigations__link">Клипы</a>      
       </li>
       <li className="navigations__item">
-        <a href="#" className="navigations__link">Гайды</a>      
+        <a href="#guides" className="navigations__link">Гайды</a>      
       </li>
       <li className="navigations__item">
-        <a href="#" className="navigations__link">Контакты</a>      
+        <a href="#contacts" className="navigations__link">Контакты</a>      
       </li>
     </ul>
     

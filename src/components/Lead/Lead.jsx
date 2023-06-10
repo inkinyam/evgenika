@@ -1,9 +1,9 @@
 import './Lead.scss';
 import logo from '../../assets/main-logo.svg';
-import clipcover from '../../assets/photo/clip-cover.png';
 import Header from '../Header/Header';
+import PropTypes from 'prop-types';
 
-const Lead = () => {
+const Lead = ({data}) => {
   return (
     <>
       <section className="lead">
@@ -13,9 +13,11 @@ const Lead = () => {
           <button className='lead__button'>Купить билет</button>
 
           <div className="lead__new">
-            <span className='lead__small-text'>Новый клип</span>
-            <img className='lead__clip-cover' src={clipcover} alt="Новый клип" />
-            <a href="#" className='lead__clip-link'>  </a>
+            <span className='lead__small-text'>{data.title}</span>
+{/*            { data.image ? <img className='lead__clip-cover' src={data.image} alt={data.title} /> 
+                        : <div className='lead__emptybox'></div>  } */}
+           <div className='lead__emptybox'></div>
+            <a href={data.link} className='lead__clip-link'>  </a>
           </div>
         </div>
 
@@ -24,5 +26,7 @@ const Lead = () => {
     </>
   )
 }
-
+Lead.propTypes = {
+  data: PropTypes.object.isRequired
+} 
 export default Lead;
