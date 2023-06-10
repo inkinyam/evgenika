@@ -1,8 +1,6 @@
 @import url("swiper/css");
 @import url("swiper/css/bundle");
 
-
-
 @import url('./vendors/normalize.scss');
 @import url('./vendors/fonts.scss');
 @import './utils/section';
@@ -33,11 +31,5 @@ body {
   min-height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #000000;
-    background-color: #ffffff;
-  }
-}
 
 
