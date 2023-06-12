@@ -6,7 +6,7 @@
   "homepage": "https://inkinyam.github.io/evgenika/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/evgenika/",
+    "build": "vite build --base=evgenika/",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
