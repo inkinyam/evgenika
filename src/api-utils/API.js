@@ -1,4 +1,4 @@
-const SERVER_URL = 'http://evgenika.su/api/v1/content';
+const SERVER_URL = 'https://evgenika.su/api/v1/content';
 
 
 class mainApi {
