@@ -14,9 +14,8 @@ const Lead = ({data}) => {
 
           <div className="lead__new">
             <span className='lead__small-text'>{data.title}</span>
-{/*            { data.image ? <img className='lead__clip-cover' src={data.image} alt={data.title} /> 
-                        : <div className='lead__emptybox'></div>  } */}
-           <div className='lead__emptybox'></div>
+              { data.image ? <img className='lead__clip-cover' src={data.image} alt={data.title} /> 
+                        : <div className='lead__emptybox'></div>  } 
             <a href={data.link} className='lead__clip-link'>  </a>
           </div>
         </div>

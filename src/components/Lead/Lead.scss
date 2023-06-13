@@ -107,6 +107,7 @@
     object-fit: cover;
     min-height: 250px;
     object-position: center;
+    border-radius: 15px;
 
     @media screen and (max-width: 900px) {
       width: 200px;

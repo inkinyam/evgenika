@@ -54,11 +54,12 @@ function App() {
               setConcertContactCards(contactsData['contact-block-1']);
               setPRtContactCards(contactsData['contact-block-2']);
             })
-           .catch((err) => console.log(err))       
+           .catch((err) => console.log("ERROR: API return:" + err))       
     }, [])
 
   return(
     <>  
+    <div className='app'>
       <Lead data = {promoCards}/>
       <main>
         <Navigations/>
@@ -73,6 +74,23 @@ function App() {
       <Footer concertContact = {concertContactCards}
               prContact      = {prContactCards}
               social         = {socialCards}/>
+
+      
+        <div className="app__blub"></div>         
+        <div className="app__blub"></div>         
+        <div className="app__blub"></div>         
+        <div className="app__blub"></div>         
+        <div className="app__blub"></div>         
+        <div className="app__blub"></div>         
+        <div className="app__blub"></div>         
+        <div className="app__blub"></div>         
+        <div className="app__blub"></div>         
+        <div className="app__blub"></div>         
+        <div className="app__blub"></div>         
+        <div className="app__blub"></div>         
+        <div className="app__blub"></div>        
+      </div>
+      
     </>
   )
 }
