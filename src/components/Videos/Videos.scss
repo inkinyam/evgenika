@@ -15,6 +15,8 @@
 
   
   .videos__slider {
+    position: relative;
+    z-index: 4;
     overflow-y: visible;
 
     .swiper-pagination-bullet {

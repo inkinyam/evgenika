@@ -8,9 +8,11 @@ import News from '../News/News';
 import Videos from '../Videos/Videos';
 import Guides from '../Guides/Guides';
 import Footer from '../Footer/Footer';
+import Blub from '../Blub/Blub';
 import React from 'react';
 
 import api from '../../api-utils/API';
+
 
 function App() {
   const [publicationCards, setPublicationCards] = React.useState([]);
@@ -23,6 +25,7 @@ function App() {
   const [socialCards, setSocialCards] = React.useState({});
   const [concertContactCards, setConcertContactCards] = React.useState({});
   const [prContactCards, setPRtContactCards] = React.useState({});
+  const [parallaxSpeed, setParallaxSpeed] = React.useState(0.01);
 
   React.useEffect(() => { 
     Promise.all([  
@@ -57,12 +60,20 @@ function App() {
            .catch((err) => console.log("ERROR: API return:" + err))       
     }, [])
 
+    React.useEffect(()=> {
+      window.addEventListener('scroll', ()=> {
+        setParallaxSpeed(window.pageYOffset*.1)
+      })
+    },[])
+
+
   return(
-    <>  
+    <>
+
     <div className='app'>
       <Lead data = {promoCards}/>
       <main>
-        <Navigations/>
+        <Navigations />
         <About    data   = {aboutCards}/>
         <Concerts data   = {concertCards}/>
         <Tracks   data   = {trackCards}/>
@@ -75,20 +86,24 @@ function App() {
               prContact      = {prContactCards}
               social         = {socialCards}/>
 
-      
-        <div className="app__blub"></div>         
-        <div className="app__blub"></div>         
-        <div className="app__blub"></div>         
-        <div className="app__blub"></div>         
-        <div className="app__blub"></div>         
-        <div className="app__blub"></div>         
-        <div className="app__blub"></div>         
-        <div className="app__blub"></div>         
-        <div className="app__blub"></div>         
-        <div className="app__blub"></div>         
-        <div className="app__blub"></div>         
-        <div className="app__blub"></div>         
-        <div className="app__blub"></div>        
+        <Blub  x={2}  y={14}   width={140} height={120} blur={30}  transformY={parallaxSpeed*1.6}/>
+        <Blub  x={84} y={42}  width={50}  height={50}  blur={12}  transformY={parallaxSpeed*2}/>
+        <Blub  x={20} y={100} width={100} height={100} blur={120} transformY={parallaxSpeed*1.1} />
+        <Blub  x={80} y={135} width={80}  height={140} blur={20}  transformY={parallaxSpeed*1.3}/>
+        <Blub  x={8}  y={173} width={220} height={230} blur={30}  transformY={parallaxSpeed}/>
+        <Blub  x={75} y={234} width={90}  height={112} blur={30}  transformY={parallaxSpeed*1.6}/>
+        <Blub  x={1}  y={279} width={380} height={324} blur={100} transformY={parallaxSpeed*2}/>
+        <Blub  x={12} y={326} width={220} height={240} blur={50}  transformY={parallaxSpeed}/>
+        <Blub  x={50} y={402} width={420} height={440} blur={77}  transformY={parallaxSpeed*2}/>
+        <Blub  x={-1} y={483} width={313} height={350} blur={55}  transformY={parallaxSpeed*1.1}/>
+        <Blub  x={76} y={515} width={280} height={310} blur={70}  transformY={parallaxSpeed*1.3}/>
+        <Blub  x={2}  y={591} width={200} height={140} blur={40}  transformY={parallaxSpeed*1.6}/>
+          
+
+        <Blub  x={39} y={644} width={313} height={350} blur={55}  transformY={parallaxSpeed*1.3}/>
+        <Blub  x={91} y={659} width={120} height={150} blur={30} transformY={parallaxSpeed*1.2}/>
+        <Blub  x={85} y={691} width={90}  height={112} blur={30}  transformY={parallaxSpeed*1.1}/>
+        <Blub  x={20} y={710} width={120} height={130} blur={20}  transformY={parallaxSpeed*1.6}/>
       </div>
       
     </>
