@@ -12,6 +12,7 @@ import Blub from '../Blub/Blub';
 import React from 'react';
 
 import api from '../../api-utils/API';
+import Loader from '../Loader/Loader';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   const [concertContactCards, setConcertContactCards] = React.useState({});
   const [prContactCards, setPRtContactCards] = React.useState({});
   const [parallaxSpeed, setParallaxSpeed] = React.useState(0.01);
+  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => { 
     Promise.all([  
@@ -57,7 +59,12 @@ function App() {
               setConcertContactCards(contactsData['contact-block-1']);
               setPRtContactCards(contactsData['contact-block-2']);
             })
-           .catch((err) => console.log("ERROR: API return:" + err))       
+           .catch((err) => console.log("ERROR: API return:" + err)) 
+           .finally(()=>{
+              setTimeout(() => {
+                setIsLoading(false);              
+              }, 2500);
+            })      
     }, [])
 
     React.useEffect(()=> {
@@ -66,12 +73,13 @@ function App() {
       })
     },[])
 
-
+const appClassList = isLoading? 'app app_hidden': 'app';
   return(
     <>
-
-    <div className='app'>
-      <Lead data = {promoCards}/>
+    <Loader isLoading={isLoading}/>
+    <div className={appClassList}>
+      <Lead data   = {promoCards}  
+            social = {socialCards}/>
       <main>
         <Navigations />
         <About    data   = {aboutCards}/>

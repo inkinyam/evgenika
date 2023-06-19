@@ -3,11 +3,11 @@ import logo from '../../assets/main-logo.svg';
 import Header from '../Header/Header';
 import PropTypes from 'prop-types';
 
-const Lead = ({data}) => {
+const Lead = ({data, social}) => {
   return (
     <>
       <section className="lead">
-        <Header />
+        <Header social={social} />
         <div className='lead__info'>
           <img src={logo} alt="logo" className="lead__logo" />
           <button className='lead__button'>Купить билет</button>
@@ -26,6 +26,7 @@ const Lead = ({data}) => {
   )
 }
 Lead.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  social: PropTypes.object.isRequired
 } 
 export default Lead;

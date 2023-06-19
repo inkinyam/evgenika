@@ -9,4 +9,7 @@
   background-size: cover;
   height: 100%;
 
+  &.app_hidden {
+    display: none;
+  }
 }

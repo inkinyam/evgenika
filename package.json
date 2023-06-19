@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://inkinyam.github.io/evgenika/",
-  "scripts": {
+   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=evgenika/",
+    "build": "vite build ",
+    "build-gp": "vite build --base/evgenika",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
