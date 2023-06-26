@@ -10,7 +10,7 @@ const Lead = ({data, social}) => {
         <Header social={social} />
         <div className='lead__info'>
           <img src={logo} alt="logo" className="lead__logo" />
-          <button className='lead__button'>Купить билет</button>
+          <a href='#concerts' className='lead__button'>Купить билет</a>
 
           <div className="lead__new">
             <span className='lead__small-text'>{data.title}</span>

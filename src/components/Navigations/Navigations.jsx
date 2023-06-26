@@ -1,34 +1,32 @@
 import './Navigations.scss';
+import PropTypes from 'prop-types';
 
-const Navigations = () => {
+export const NavigationsItem = ({link, text}) => {
+  return (
+    <li className="navigations__item">
+        <a href={link} className="navigations__link">{text}</a>      
+    </li>
+  )
+}
+
+
+NavigationsItem.propTypes = {
+  link: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
+} 
+
+export const Navigations = ({children}) => {
   return (
   <nav className='navigations'>
     <ul className="navigations__links">
-      <li className="navigations__item">
-        <a href="#about" className="navigations__link">О певице</a>      
-      </li>
-      <li className="navigations__item">
-        <a href="#concerts" className="navigations__link">Концерты</a>      
-      </li>
-      <li className="navigations__item">
-        <a href="#tracks" className="navigations__link">Треки</a>      
-      </li>
-      <li className="navigations__item">
-        <a href="#news" className="navigations__link">Новости</a>      
-      </li>
-      <li className="navigations__item">
-        <a href="#videos" className="navigations__link">Клипы</a>      
-      </li>
-      <li className="navigations__item">
-        <a href="#guides" className="navigations__link">Гайды</a>      
-      </li>
-      <li className="navigations__item">
-        <a href="#contacts" className="navigations__link">Контакты</a>      
-      </li>
+      {children}
     </ul>
     
   </nav>
   )
 }
 
-export default Navigations;
+Navigations.propTypes = {
+  children: PropTypes.array.isRequired
+} 
+

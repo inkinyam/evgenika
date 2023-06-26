@@ -26,7 +26,6 @@
 
 
 
-
   .tracks__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -63,43 +62,20 @@
       min-height: 100%;
       object-position: center;
       object-fit: cover;
+      @include transition(transform);
+      transform: scale(1);
+      will-change: transform;
     }
 
-    .tracks__link {
-      @include transition (background-color);
-      z-index: 2;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 62px;
-      height: 62px;
-      max-width: 62px;
-      min-width: 62px;
-      max-height: 62px;
-      min-height: 62px;
-      border-radius: 50%;
-      border-top: 1px solid rgba(209, 213, 219, 0.15);
-      border-bottom: 1px solid rgba(209, 213, 219, 0.15);
-      backdrop-filter: blur(16px) saturate(200%);
-      background-color: rgba(255, 255, 255, 0.1);
+    .tracks__link-block {
       display: block;
-
+      width: 100%;
+      aspect-ratio: 1;
+      line-height: 0;
       &:hover {
-        background-color: rgba(255, 7, 38, 0.8);
-      }
-
-      &::before {
-        content: '';
-        display: block;
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        top: 50%;
-        left: 55%;
-        transform: translate(-50%, -50%);
-        background-color: rgba(0, 0, 0, 0.7);
-        clip-path: polygon(0% 0%, 0% 100%, 100% 50%) ;
+        .tracks__img {
+          transform: scale(1.02);
+        }
       }
     }
   }
@@ -107,6 +83,7 @@
   
 .tracks__link {
   color: white;
+  cursor: pointer;
   font-size: 16px;
   line-height: 20px;
   @include transition(opacity);

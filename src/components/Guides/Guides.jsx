@@ -2,7 +2,7 @@ import './Guides.scss';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import GuidesCard from '../GuidesCard/GuidesCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper';
+import { Navigation, Pagination } from 'swiper';
 import PropTypes from 'prop-types';
 
 const Guides = ({data}) => {
@@ -14,8 +14,9 @@ const Guides = ({data}) => {
               spaceBetween = {0}
               threshold    = {1}
               freeMode     = {true}
-              pagination   = {true}           
-              modules      = {[ Pagination ]}
+              pagination   = {true}    
+              navigation       
+              modules      = {[ Pagination, Navigation ]}
               className    = "guides__slider" >
 
             { data.map(card => {

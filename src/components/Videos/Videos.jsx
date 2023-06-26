@@ -1,6 +1,6 @@
 import './Videos.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper';
+import { Pagination,  Navigation } from 'swiper';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import PropTypes from 'prop-types';
 
@@ -15,14 +15,10 @@ const Videos = ({data, social}) => {
               spaceBetween   = {0}
               threshold      = {1}
               freeMode       = {true}
-              navigation     = {false}  
+              navigation     = {true}  
               pagination     = {true}   
-              autoplay       = {true}
-              delay          = {{
-                delay: 1500,
-                disableOnInteraction: false,
-              }}      
-              modules        = {[ Pagination, Autoplay]}
+              autoplay       = {false}
+              modules        = {[ Pagination, Navigation]}
               className      = "videos__slider" >
 
             { data.map(card => {

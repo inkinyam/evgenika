@@ -18,6 +18,28 @@
     position: relative;
     z-index: 4;
     overflow-y: visible;
+    box-sizing: border-box;
+    padding: 50px 0 0 !important;
+    
+    .swiper-button-prev {
+      top: 10px;
+      left: unset;
+      right:  70px;
+  
+      &::after {
+         content: url(../../assets/icons/arrow-left.svg); 
+      }
+    }
+  
+  
+    .swiper-button-next {
+      top: 10px;
+      right:  10px;
+  
+      &::after {
+        content: url(../../assets/icons/arrow-right.svg); 
+      }
+    }
 
     .swiper-pagination-bullet {
       width: 12px;
@@ -126,3 +148,4 @@
     }
   }
 }
+

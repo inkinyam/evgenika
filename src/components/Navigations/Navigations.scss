@@ -54,6 +54,7 @@
       @include transition(color);
       &:hover {
         color: rgb(255, 0, 0);
+        text-shadow: 0.5px 0.5px white;
       }
     }
   }

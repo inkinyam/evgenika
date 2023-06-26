@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 const TracksCard = ({data}) => {
   return (
     <li className="tracks__item">
-      <img src={data.image} alt={data.name} className="tracks__img"/>
-        <a href={data.link} className='tracks__link'></a>
+      <a href={data.link} target='_blank' rel='noreferrer' className="tracks__link-block">
+        <img src={data.image} alt={data.name} className="tracks__img"/>
+      </a> 
     </li>
   )
 }
