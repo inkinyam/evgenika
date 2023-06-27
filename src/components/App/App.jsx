@@ -65,7 +65,7 @@ function App() {
            .finally(()=>{
               setTimeout(() => {
                 setIsLoading(false);              
-              }, 2000);
+              },1); //TODO 2000
             })      
     }, [])
 
@@ -75,7 +75,8 @@ function App() {
       <Loader isLoading={isLoading}/>
       <AppBackground isLoading={isLoading}>
         <Lead data   = {promoCards}  
-              social = {socialCards}/>
+              social = {socialCards}
+              concerts = {concertCards}/>
         <main>
           <Navigations>
             <NavigationsItem link='#about' text='о певице'/>  
@@ -87,7 +88,7 @@ function App() {
             <NavigationsItem link='#contacts' text='контакты'/>  
           </Navigations> 
 
-          { (aboutCards.length > 0) && <About data = {aboutCards}/> }
+          <About data = {aboutCards}/> 
           { (concertCards.length > 0) && <Concerts data = {concertCards}/> }
           { (trackCards.length > 0) && <Tracks data = {trackCards}/> }
           { (publicationCards.length > 0) && <News data = {publicationCards}/> }

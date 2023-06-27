@@ -1,3 +1,5 @@
+@import '../../utils/mixins';
+
 .news {
   padding: 50px 0 150px;
   min-height: unset !important;
@@ -57,16 +59,30 @@
 
     height: 240px;
 
-    
-
     img {
       width: 100%;
       height: auto;
       min-height: 100%;
       object-fit: cover;
       object-position: center;
+      @include transition(transform);
+      will-change: transform;
     }
   }
+
+  a.news__img{
+    cursor: pointer;
+    line-height: 0;
+
+    &:hover {
+      img {
+        transform: scale(1.02);
+      }
+    }
+
+  }
+
+
   .news__date {
     font-family: 'Montserrat';
     font-style: normal;
@@ -113,6 +129,19 @@
     letter-spacing: 0.01em;
     margin: 0;
 
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -ms-line-clamp: 4;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    display: -webkit-box;
+    display: -moz-box;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+
     
     @media screen and (max-width: 900px) {
       font-size: 14px;
@@ -120,5 +149,31 @@
     }
   }
 
+  .news__more {
+    @include transition(opacity);
+    cursor: pointer;
+    margin-top: 16px;
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+    color:white;
+    position: relative;
+    padding: 0;
+
+    &::after {
+      @include transition(right);
+      position: absolute;
+      right: -45px;
+      top: 3px;
+      content: url(../../assets/icons/arrow-right.svg); 
+    }
+
+    &:hover {
+      opacity: 0.7;
+      &::after {
+        right: -55px;
+      }
+    }
+  }
   
 }
