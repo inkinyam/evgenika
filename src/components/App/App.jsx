@@ -65,10 +65,9 @@ function App() {
            .finally(()=>{
               setTimeout(() => {
                 setIsLoading(false);              
-              },1); //TODO 2000
+              },2000); 
             })      
     }, [])
-
 
   return(
     <>
@@ -76,7 +75,7 @@ function App() {
       <AppBackground isLoading={isLoading}>
         <Lead data   = {promoCards}  
               social = {socialCards}
-              concerts = {concertCards}/>
+              concerts = {concertCards.length}/>
         <main>
           <Navigations>
             <NavigationsItem link='#about' text='о певице'/>  

@@ -11,8 +11,6 @@ const NewsCard = ({card}) => {
     setIsOpen(true);
   }
 
-  console.log(card);
-
   return (
     <div className="news__card">
       { card.link

@@ -4,13 +4,14 @@ import Header from '../Header/Header';
 import PropTypes from 'prop-types';
 
 const Lead = ({data, social, concerts}) => {
+  
   return (
     <>
       <section className="lead">
         <Header social={social} />
         <div className='lead__info'>
           <img src={logo} alt="logo" className="lead__logo" />
-          {(concerts.lenght > 0) && <a href='#concerts' className='lead__button'>Купить билет</a>}
+          {(concerts > 0) && <a href='#concerts' className='lead__button'>Купить билет</a>}
 
           <div className="lead__new">
             <span className='lead__small-text'>{data.title}</span>
@@ -19,8 +20,7 @@ const Lead = ({data, social, concerts}) => {
             <a href={data.link} target='_blank' rel='noreferrer' className='lead__clip-link'>  </a>
           </div>
         </div>
-
-      
+     
       </section>
     </>
   )
@@ -28,6 +28,6 @@ const Lead = ({data, social, concerts}) => {
 Lead.propTypes = {
   data: PropTypes.object.isRequired,
   social: PropTypes.object.isRequired,
-  concerts: PropTypes.array.isRequired,
+  concerts: PropTypes.number.isRequired,
 } 
 export default Lead;
