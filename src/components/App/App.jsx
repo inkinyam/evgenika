@@ -83,7 +83,7 @@ function App() {
             { (trackCards.length > 0) &&  <NavigationsItem link='#tracks' text='треки'/>  }
             { (publicationCards.length > 0) && <NavigationsItem link='#news' text='новости'/>  }
             { (videoCards.length > 0) &&  <NavigationsItem link='#videos' text='клипы'/>  }
-            { (guidesCards.length > 0) &&<NavigationsItem link='#guides' text='гайды'/>  }
+            { (guidesCards.length > 0) &&<NavigationsItem link='#guides' text='продукция'/>  }
             <NavigationsItem link='#contacts' text='контакты'/>  
           </Navigations> 
 

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 const Guides = ({data}) => {
   return(
     <section className='section guides' id='guides'>
-    <SectionTitle text='Гайды'/>
+    <SectionTitle text='Продукция'/>
 
     <Swiper slidesPerView  = {1}
               spaceBetween = {0}

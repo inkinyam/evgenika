@@ -6,7 +6,7 @@
 
   
   .section-title {
-    left: -100px;
+    left: -150px;
   }
 
   @media screen and (max-width: 900px) {
@@ -32,7 +32,7 @@
       right:  70px;
   
       &::after {
-        z-index: 6;
+        z-index: 1006;
          content: url(../../assets/icons/arrow-left.svg); 
       }
     }
@@ -44,7 +44,7 @@
   
       &::after {
         content: url(../../assets/icons/arrow-right.svg); 
-        z-index: 6;
+        z-index: 1006;
       }
     }
 
@@ -105,8 +105,9 @@
    
       img {
         max-width: 100%;
+        width: 100%;
+        height: auto;
         border: 1px solid rgba(115, 115, 115, 0.23);
-        min-height: 100%;
         object-fit: cover;
         object-position: center;
         position: absolute;

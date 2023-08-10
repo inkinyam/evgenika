@@ -29,8 +29,6 @@ const AppBackground = ({children, isLoading}) => {
       <Blub  x={12} y={326} width={220} height={240} blur={50}  transformY={parallaxSpeed}/>
       <Blub  x={50} y={402} width={420} height={440} blur={77}  transformY={parallaxSpeed*0.4}/>
       <Blub  x={-1} y={483} width={313} height={350} blur={55}  transformY={parallaxSpeed*1.1}/>
-      <Blub  x={76} y={530} width={280} height={310} blur={70}  transformY={parallaxSpeed*0.3}/>
-      <Blub  x={2}  y={591} width={200} height={140} blur={40}  transformY={parallaxSpeed*0.6}/>
     </div>
   )
 }
