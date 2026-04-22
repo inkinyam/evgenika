@@ -1,40 +1,61 @@
-import './Concerts.scss';
-import SectionTitle from '../SectionTitle/SectionTitle';
-import React from 'react';
-import PropTypes from 'prop-types';
-import ConcertCard from '../ConcertCard/ConcertCard';
+import "./Concerts.scss";
+import SectionTitle from "../SectionTitle/SectionTitle";
+import React from "react";
+import PropTypes from "prop-types";
+import ConcertCard from "../ConcertCard/ConcertCard";
 
-const Concerts = ({data}) => {
+const Concerts = ({ data }) => {
   const [showMore, setShowMoreVisible] = React.useState(false);
-  
-  if (data.length > 4) {
-    data.splice(3, data.length-1);
-    setShowMoreVisible(true);
-  }   
+  const [hideMore, setHideMoreVisible] = React.useState(false);
+  const [showed, setShowed] = React.useState([]);
 
-  const buttonClassList = !showMore ? 'concert__link concert__link_hidden' : 'concert__link';
+  React.useEffect(() => {
+    setShowed(data.slice(0, 4));
+    setShowMoreVisible(true);
+  }, [data]);
+
+  const handleShowMoreClick = () => {
+    setShowed(data);
+    setShowMoreVisible(false);
+    setHideMoreVisible(true);
+  };
+  const handleHideMoreClick = () => {
+    setShowed(data.slice(0, 4));
+    setShowMoreVisible(true);
+    setHideMoreVisible(false);
+  };
+
+  const buttonShowMoreClassList = !showMore
+    ? "concert__link concert__link_hidden"
+    : "concert__link";
+  const buttonHideMoreClassList = !hideMore
+    ? "concert__link concert__link_hidden"
+    : "concert__link";
+
   return (
-    <section className="section concerts" id='concerts'>
-      <SectionTitle text='Концерты'/>
+    <section className="section concerts" id="concerts">
+      <SectionTitle text="Концерты" />
 
       <ul className="concerts__list">
-        { data.map(item => {
-            return (
-              <ConcertCard data = {item} 
-                           key  = {item.id}/>
-            )
-          })
-        }
+        {showed.map((item) => {
+          return <ConcertCard data={item} key={item.id} />;
+        })}
       </ul>
 
-      <a href='google.com' className={buttonClassList}> Показать все</a>
+      <a onClick={handleShowMoreClick} className={buttonShowMoreClassList}>
+        {" "}
+        Показать все
+      </a>
+      <a onClick={handleHideMoreClick} className={buttonHideMoreClassList}>
+        {" "}
+        Скрыть
+      </a>
     </section>
-  )
-}
+  );
+};
 
 Concerts.propTypes = {
-  data: PropTypes.array.isRequired
-}
-
+  data: PropTypes.array.isRequired,
+};
 
 export default Concerts;

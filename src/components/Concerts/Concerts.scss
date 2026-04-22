@@ -1,4 +1,4 @@
-@import '../../utils/mixins';
+@import "../../utils/mixins";
 
 .concerts {
   display: flex;
@@ -8,7 +8,7 @@
   align-items: center;
   box-sizing: border-box;
   min-height: 60vh;
-  
+
   padding: 150px 214px 100px;
 
   .section-title {
@@ -29,12 +29,10 @@
   }
 }
 
-
-
 .concerts__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 100%;  
+  width: 100%;
   gap: 30px;
   margin: 0 auto;
   padding: 0;
@@ -52,7 +50,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 5px;
-    
+
     border-top: 1px solid rgba(209, 213, 219, 0.15);
     border-bottom: 1px solid rgba(209, 213, 219, 0.15);
     backdrop-filter: blur(16px) saturate(200%);
@@ -63,7 +61,6 @@
     @media screen and (max-width: 900px) {
       row-gap: 20px;
     }
-
 
     .concerts__card-block {
       display: flex;
@@ -149,15 +146,14 @@
       max-width: 94px;
 
       &:hover {
-        color: #FF0726;
-        border-color: #FF0726;
+        color: #ff0726;
+        border-color: #ff0726;
         background-color: #fff;
       }
 
       @media screen and (max-width: 900px) {
         margin-top: 8px;
       }
-
     }
   }
 }
@@ -166,6 +162,7 @@
   color: white;
   font-size: 16px;
   line-height: 20px;
+  cursor: pointer;
   @include transition(opacity);
 
   &.concert__link_hidden {
