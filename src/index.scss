@@ -1,9 +1,5 @@
-@import url("swiper/css");
-@import url("swiper/css/bundle");
-
-@import url('./vendors/normalize.scss');
-@import url('./vendors/fonts.scss');
-@import './utils/section';
+@use './vendors/normalize';
+@use './utils/section';
 
 
 :root {

@@ -1,4 +1,4 @@
-@import '../../utils/mixins';
+@use '../../utils/mixins' as *;
 
 .guides {
   padding: 100px 0 150px;
