@@ -35,9 +35,9 @@ const AppBackground = ({children, isLoading}) => {
 
 
 AppBackground.propTypes = {
-  children: PropTypes.array.isRequired,
-  isLoading: PropTypes.bool.isRequired
-}
+  children: PropTypes.node.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+};
 
 export default AppBackground;
 

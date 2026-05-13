@@ -15,6 +15,12 @@ import React from "react";
 
 import api from "../../api-utils/API";
 
+const asArray = (value) => (Array.isArray(value) ? value : []);
+const asObject = (value) =>
+  value !== null && typeof value === "object" && !Array.isArray(value)
+    ? value
+    : {};
+
 function App() {
   const [publicationCards, setPublicationCards] = React.useState([]);
   const [concertCards, setConcertsCards] = React.useState([]);
@@ -49,16 +55,16 @@ function App() {
           aboutData,
           contactsData,
         ]) => {
-          setPublicationCards(publicationData);
-          setConcertsCards(concertData);
-          setTraksCards(tracksData);
-          setVideosCards(videosData);
-          setGuidesCards(guidesData);
-          setAboutCards(aboutData.about);
-          setPromoCards(aboutData.promo);
-          setSocialCards(contactsData.social);
-          setConcertContactCards(contactsData["contact-block-1"]);
-          setPRtContactCards(contactsData["contact-block-2"]);
+          setPublicationCards(asArray(publicationData));
+          setConcertsCards(asArray(concertData));
+          setTraksCards(asArray(tracksData));
+          setVideosCards(asArray(videosData));
+          setGuidesCards(asArray(guidesData));
+          setAboutCards(asObject(aboutData?.about));
+          setPromoCards(asObject(aboutData?.promo));
+          setSocialCards(asObject(contactsData?.social));
+          setConcertContactCards(asObject(contactsData?.["contact-block-1"]));
+          setPRtContactCards(asObject(contactsData?.["contact-block-2"]));
         },
       )
       .catch((err) => console.log("ERROR: API return:" + err))

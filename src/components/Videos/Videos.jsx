@@ -4,9 +4,14 @@ import { Pagination,  Navigation } from 'swiper';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import PropTypes from 'prop-types';
 
-import ReactPlayer from 'react-player'
+import ReactPlayerPkg from 'react-player';
 
-const Videos = ({data, social}) => {
+const ReactPlayer =
+  typeof ReactPlayerPkg === 'function'
+    ? ReactPlayerPkg
+    : ReactPlayerPkg?.default ?? ReactPlayerPkg;
+
+const Videos = ({ data, social }) => {
   return (
     <section className='section videos' id='videos'>
       <SectionTitle text="Клипы"/>

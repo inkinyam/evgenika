@@ -1,6 +1,7 @@
-@use '../../utils/mixins' as *;
+@use "../../utils/mixins" as *;
 
 .navigations {
+  font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -37,7 +38,6 @@
     }
 
     .navigations__link {
-      font-family: 'Montserrat';
       font-style: normal;
       font-weight: 500;
       font-size: 16px;

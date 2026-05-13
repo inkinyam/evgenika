@@ -1,6 +1,7 @@
-@use '../../utils/mixins' as *;
+@use "../../utils/mixins" as *;
 
 .news {
+  font-family: "Montserrat", sans-serif;
   padding: 50px 0 150px;
   min-height: unset !important;
 
@@ -13,7 +14,7 @@
 
     .section-title {
       display: block;
-      margin: 0 auto 20px
+      margin: 0 auto 20px;
     }
   }
 }
@@ -25,24 +26,22 @@
   .swiper-button-prev {
     top: 10px;
     left: unset;
-    right:  70px;
+    right: 70px;
 
     &::after {
-       content: url(../../assets/icons/arrow-left.svg); 
+      content: url(../../assets/icons/arrow-left.svg);
     }
   }
-
 
   .swiper-button-next {
     top: 10px;
-    right:  10px;
+    right: 10px;
 
     &::after {
-      content: url(../../assets/icons/arrow-right.svg); 
+      content: url(../../assets/icons/arrow-right.svg);
     }
   }
 }
-
 
 .news__card {
   display: flex;
@@ -70,7 +69,7 @@
     }
   }
 
-  a.news__img{
+  a.news__img {
     cursor: pointer;
     line-height: 0;
 
@@ -79,12 +78,9 @@
         transform: scale(1.02);
       }
     }
-
   }
 
-
   .news__date {
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -101,7 +97,6 @@
   }
 
   .news__title {
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
@@ -119,14 +114,13 @@
   }
 
   .news__description {
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
     display: flex;
     align-items: center;
-    letter-spacing: 0.01em;
+    /*     letter-spacing: 0.01em; */
     margin: 0;
 
     -ms-text-overflow: ellipsis;
@@ -142,7 +136,6 @@
     -webkit-box-orient: vertical;
     box-orient: vertical;
 
-    
     @media screen and (max-width: 900px) {
       font-size: 14px;
       line-height: 18px;
@@ -156,7 +149,7 @@
     width: fit-content;
     background-color: transparent;
     border: none;
-    color:white;
+    color: white;
     position: relative;
     padding: 0;
 
@@ -165,7 +158,7 @@
       position: absolute;
       right: -45px;
       top: 3px;
-      content: url(../../assets/icons/arrow-right.svg); 
+      content: url(../../assets/icons/arrow-right.svg);
     }
 
     &:hover {
@@ -175,5 +168,4 @@
       }
     }
   }
-  
 }

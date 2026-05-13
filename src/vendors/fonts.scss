@@ -1,7 +1,7 @@
 /*подгружаем файлы шрифтов из папки fonts*/
 @font-face {
     font-family: 'Montserrat';
-    font-style:  bold;
+    font-style: normal;
     font-weight: 800;
     font-display: swap;
     src: url("./fonts/Montserrat-ExtraBold.ttf") format("truetype")
@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'Montserrat';
-    font-style:  bold;
+    font-style: normal;
     font-weight: 700;
     font-display: swap;
     src: url("./fonts/Montserrat-Bold.ttf") format("truetype")

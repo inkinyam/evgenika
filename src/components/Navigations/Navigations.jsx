@@ -27,6 +27,6 @@ export const Navigations = ({children}) => {
 }
 
 Navigations.propTypes = {
-  children: PropTypes.array.isRequired
-} 
+  children: PropTypes.node.isRequired,
+};
 
